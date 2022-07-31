@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Api::RecipesController < Api::BaseController
   # jitera-anchor-dont-touch: before_action_filter
   before_action :doorkeeper_authorize!, only: %w[index show update destroy]
@@ -53,6 +55,21 @@ class Api::RecipesController < Api::BaseController
     request.merge!('category_id' => params.dig(:recipes, :category_id))
     request.merge!('user_id' => params.dig(:recipes, :user_id))
 
-    @recipes = Recipe.all
+    @recipes = collection[:records]
+  end
+
+  def share
+    # TODO: create a new table having recipe_id and user_id for sharing
+    # implement policies as per stored ids to ensure sharing
+  end
+
+  private
+
+  def collection
+    @collection ||= ::RecipesCollection.new(relation, filter_params).results
+  end
+
+  def filter_params
+    params.permit(%i(title time difficulty page per_page sort_column sort_direction))
   end
 end

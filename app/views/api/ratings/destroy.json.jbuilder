@@ -1,6 +1,6 @@
 if @error_message.blank?
-  json.recipe do
-    json.partial! 'recipe'
+  json.rating do
+    json.partial! '/api/shared/rating', show_recipe: true
   end
 else
   json.error_message @error_message

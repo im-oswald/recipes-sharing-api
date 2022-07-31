@@ -1,6 +1,8 @@
 en:
   authentication_error: Unauthorized
   file_exists_label: File already exists
+  rating_exists: User already rated this recipe
+  invalid_rating: Rated as is not valid
   mobile:
     wrong_credentials: Wrong credentials
     user_not_registered: User is not registered

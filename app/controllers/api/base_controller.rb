@@ -2,7 +2,8 @@ module Api
   class BaseController < ActionController::API
     include OauthTokensConcern
     include ActionController::Cookies
-    include Pundit
+    include Pundit::Authorization
+    include BaseHandler
 
     # =======End include module======
 
@@ -49,6 +50,14 @@ module Api
 
     def base_render_record_not_unique
       render json: { message: I18n.t('errors.record_not_uniq_error') }, status: :forbidden
+    end
+
+    def relation
+      model.all
+    end
+
+    def filter_params
+      params.permit(%i(sort_column sort_direction))
     end
   end
 end

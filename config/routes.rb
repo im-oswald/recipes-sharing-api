@@ -39,6 +39,10 @@ resources :categories, only: [:index, :create, :show, :update, :destroy] do
  end
 
 resources :recipes, only: [:index, :create, :show, :update, :destroy] do
+  member do
+    post :share
+  end
+  resources :ratings, only: %i[create destroy]
  end
 
   end

@@ -15,6 +15,7 @@ class Api::IngredientsController < Api::BaseController
     request.merge!('unit' => params.dig(:ingredients, :unit))
     request.merge!('amount' => params.dig(:ingredients, :amount))
     request.merge!('recipe_id' => params.dig(:ingredients, :recipe_id))
+    request.merge!('name' => params.dig(:ingredients, :name))
 
     @error_object = @ingredient.errors.messages unless @ingredient.update(request)
   end
@@ -31,6 +32,7 @@ class Api::IngredientsController < Api::BaseController
     request.merge!('unit' => params.dig(:ingredients, :unit))
     request.merge!('amount' => params.dig(:ingredients, :amount))
     request.merge!('recipe_id' => params.dig(:ingredients, :recipe_id))
+    request.merge!('name' => params.dig(:ingredients, :name))
 
     @ingredient.assign_attributes(request)
     @error_object = @ingredient.errors.messages unless @ingredient.save
@@ -42,6 +44,7 @@ class Api::IngredientsController < Api::BaseController
     request.merge!('unit' => params.dig(:ingredients, :unit))
     request.merge!('amount' => params.dig(:ingredients, :amount))
     request.merge!('recipe_id' => params.dig(:ingredients, :recipe_id))
+    request.merge!('name' => params.dig(:ingredients, :name))
 
     @ingredients = Ingredient.all
   end

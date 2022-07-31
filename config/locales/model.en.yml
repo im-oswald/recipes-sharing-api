@@ -6,6 +6,7 @@ en:
       recipes: Recipes
       categories: Categories
       ingredients: Ingredients
+      ratings: Ratings
     attributes:
       user:
         id: ID
@@ -45,6 +46,13 @@ en:
         unit: Unit
         amount: Amount
         recipe_id: Recipe ID
+      ratings:
+        id: ID
+        created_at: Created at
+        updated_at: Updated at
+        recipe_id: Recipe ID
+        recipe_id: User ID
+        rating: rating
   enums:
     recipe:
       difficulty:

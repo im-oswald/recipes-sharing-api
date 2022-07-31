@@ -26,6 +26,8 @@ gem 'jbuilder', '~> 2.11.5'
 gem 'kaminari'
 gem 'lograge'
 gem 'mysql2', '~> 0.5.3'
+# for pagination of collections
+gem 'pagy'
 gem 'puma', '~> 5.5.2'
 gem 'pundit'
 gem 'rack-cors'
@@ -42,6 +44,8 @@ gem 'importmap-rails', '~> 1.0'
 # 1.13.0 above is not compatible with M1 Mac Docker environment, need to update docker image later
 gem 'nokogiri', '1.12.5'
 gem 'rspec'
+# for units conversion
+gem 'ruby-units'
 
 group :production, :staging do
 end

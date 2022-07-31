@@ -6,6 +6,7 @@ if @ingredients.present?
     json.unit ingredient.unit
     json.unit ingredient.unit
     json.amount ingredient.amount
+    json.name @ingredient.name
     json.recipe_id ingredient.recipe_id
   end
 else

@@ -1,0 +1,21 @@
+en:
+  units:
+    defaults:
+      min:
+        - mins
+        - minutes
+        - m
+      hour:
+        - hrs
+        - hours
+        - h
+      kg:
+        - kilogram
+        - kilograms
+      g:
+        - gram
+        - grams
+      cup:
+        - cup
+        - cups
+        - c
